@@ -22,24 +22,24 @@ app.use(express.static(pubDirPath))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather App HSB',
-        name: 'MilindKt'
+        title: 'Weather Forecast',
+        name: 'Project-1'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me HSB',
-        name: 'MilindKT'
+        title: 'About',
+        name: 'Project-1'
     })
 
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help HSB',
+        title: 'Help',
         description: 'This page is help you navigate the website',
-        'name': 'Milind KT'
+        'name': 'Project-1'
     })
 })
 
@@ -55,7 +55,7 @@ app.get('/weather', (req, res) => {
             return res.send({ error });
         }
 
-        forecast(latitude, longitude, (error, { weather_desc, current_temp, feels_like } = {}) => {
+        forecast(latitude, longitude, (error, { weather_desc, current_temp, feels_like, datetimestamp } = {}) => {
             if (error) {
                 return res.send({ error })
             }
@@ -63,7 +63,8 @@ app.get('/weather', (req, res) => {
                 place: place,
                 weather_desc: weather_desc,
                 current_temp: current_temp,
-                feels_like: feels_like
+                feels_like: feels_like,
+                datetimestamp: datetimestamp
             })
         })
     })

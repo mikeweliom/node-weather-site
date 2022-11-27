@@ -16,8 +16,8 @@ const geocode = (address, callback) => {
                 // const latitude = response.body.features[0].center[0];
                 // const longitude = response.body.features[0].center[1];
                 //console.log(latitude, longitude)
-                const latitude = 12.9716;
-                const longitude = 77.5946;
+                const latitude = 20.593684;
+                const longitude = 78.96288;
                 const place = address
                 callback(undefined, {
                     latitude,

@@ -10,6 +10,9 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
+const messageThree = document.querySelector('#message-3');
+const messageFore = document.querySelector('#message-4');
+const messageFive = document.querySelector('#message-5');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -23,8 +26,10 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = error;
             } else {
                 messageOne.textContent = data.place;
-                messageTwo.textContent = "Current Temprature in *C:" + data.current_temp +
-                    ". Feels Like *C :" + data.feels_like + ". Weather Description:" + data.weather_desc;
+                messageTwo.textContent = "Current Temprature in " + data.current_temp + " *C";
+                messageThree.textContent  = "Feels Like:" + data.feels_like + " *C";
+                messageFore.textContent = "Weather Description: " + data.weather_desc;
+                messageFive.textContent = "Local date time: " + data.datetimestamp;
             }
         })
     })

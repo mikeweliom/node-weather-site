@@ -12,7 +12,8 @@ forecast = (latitude, longitude, callback) => {
             callback(undefined, {
                 weather_desc: body.current.weather_descriptions[0],
                 current_temp: body.current.temperature,
-                feels_like: body.current.feelslike
+                feels_like: body.current.feelslike,
+                datetimestamp: body.location.localtime
             });
         }
     })
